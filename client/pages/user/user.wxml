@@ -1,0 +1,32 @@
+<view class="root">
+    <view class="line">
+        <text>真实姓名</text>
+        <view class="line-control">
+            <view class="item">
+              <input type='text' bindinput='onInput' id='realName' value='{{realName}}' class='item-input' placeholder="请输入您的真实姓名" />
+            </view>
+        </view>
+    </view>
+    <view class="line">
+        <text>手机号码</text>
+        <view class="line-control">
+            <view class="item">
+              <input type='number' bindinput='onInput' value='{{phoneNum}}' id='phoneNum' class='item-input' placeholder="请输入您的电话号码" />
+            </view>
+        </view>
+    </view>
+    <view class="line">
+        <text>所属公司/单位</text>
+        <view class="line-control">
+            <view class="item">
+              <picker bindchange="bindPickerChange" value="{{id}}" range="{{companyArr}}" range-key="name">
+                <view class="picker">
+                  当前选择：{{companyArr[companyIndex].name}}
+                </view>
+              </picker>
+            </view>
+        </view>
+    </view>
+
+    <button class='submit-btn' bindtap='uploadUserInfo' type="primary"  size='default'> 保存 </button>
+</view>

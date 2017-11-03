@@ -1,0 +1,74 @@
+<view class="root">
+    <view class='index-top'>
+      <view class='avatar-box' bindtap='openUserEdit'>
+        <image class='avatar-img' mode="aspectFit" src="{{avatarImgUrl}}"></image>
+      </view>
+      <view class='text-line'>
+        <text>姓  名 :</text>
+        <text>{{realName}}</text>
+      </view>
+      <view class='text-line'>
+        <text>电  话 :</text>
+        <text>{{phoneNum}}</text>
+      </view>
+      <view class='text-line'>
+        <text>公  司 :</text>
+        <text>{{company}}</text>
+      </view>
+    </view>
+
+    <!--数据上传  -->
+    <view class='middle-opera'>
+      <button class='upload-data-btn' bindtap="doRequestYun">上传运动数据</button>
+      <text class='update-time'>最新上传数据时间：{{lastUpdateTime}}</text>
+    </view>
+
+    <!--排名  -->
+    <view class='rank-box'>
+      <view class='tab-title'>
+        <view class='tab-item {{isDay ? "active": "notActive"}}' bindtap='getRankData' id='0'>日排行榜</view>
+        <view class='tab-item {{isWeek ? "active": "notActive"}}' bindtap='getRankData' id='2'>周排行榜</view>
+        <view class='tab-item {{isMonth ? "active": "notActive"}}' bindtap='getRankData' id='1'>月排行榜</view>
+        
+      </view>
+      <!-- <view class='tab-title-bottom'></view> -->
+      <view class='rank-list'>
+        <view class='pers-rank'>
+          <block wx:if="{{selfRank.step?true:false}}">
+            <image class='avatar-img' src='{{selfRank.avatarUrl}}'></image>
+            <view class='selfRankNum'>
+              <text class='company'>{{selfRank.company}}</text>
+              <text class='rankNum'>第{{selfRank.rank}}名</text>
+            </view>
+            <text class='step-num'>{{selfRank.step}}</text>
+            
+          </block>
+          <block wx:else>
+            <text class='self-noData-tips'>您今天还没有上传运动数据哦！</text>
+          </block>
+          
+        </view>
+
+        <view class='list-box'>
+          <view class='list-item' wx:for="{{rankArr}}" wx:key="this" wx:for-index="idx" wx:for-item="item">
+            <view class='index-num'>{{item.rank}}</view>
+            <image class='avatar-img' src='{{item.avatarUrl}}'></image>
+            <view class='itemRankNum'>
+              <text class='username'>{{item.username}}</text>
+              <text class='company'>{{item.company}}</text>
+            </view>
+            <text class='step-num'>{{item.step}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--首次进入，提示去填写信息  -->
+    <view class='first-tips' wx:if='{{firstEnter}}'>
+      <view class='content-box'>
+        <view class='logo'></view>
+        <text class='tips-text'>我们还没有您的资料哦！</text>
+        <button bindtap='openUserEdit' class='link-btn'>火速前往登记</button>
+      </view>
+    </view>
+</view>

@@ -5,6 +5,9 @@
 		"urlCheck": false,
 		"es6": true,
 		"postcss": false,
-		"minified": true
-	}
+		"minified": true,
+		"newFeature": true
+	},
+	"libVersion": "1.5.4",
+	"condition": {}
 }

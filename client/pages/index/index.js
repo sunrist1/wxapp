@@ -81,7 +81,7 @@ Page({
     onShow:function(){
       this.refreshUserInfo();
 
-      // wx.navigateTo({ url: '../person/person' });
+      wx.navigateTo({ url: '../person/person?id=1' });
     },
     /*
     * 分享活动首页
@@ -171,7 +171,7 @@ Page({
           that.refreshUserInfo()
           that.getRankData();
           that.doLogin();
-          that.getNotice();
+          // that.getNotice();
         },
         fail: function () {
           //登录态过期
@@ -201,7 +201,7 @@ Page({
       let that = this;
       qcloud.request({
         url: that.data.userInfoUrl,
-        method: 'POST',
+        method: 'GET',
         header: {
           'content-type': 'application/x-www-form-urlencoded' // 默认值
         },
@@ -463,8 +463,13 @@ Page({
      * 点击跳转修改个人信息页面
      */
     openUserEdit() {
-      // 微信只允许一个信道再运行，聊天室使用信道前，我们先把当前的关闭
       wx.navigateTo({ url: '../user/user' });
     },
 
+    /**
+     * 点击跳转个人步数详情页
+     */
+    goPerson(event){
+      let id = event.currentTarget.dataset.id
+    }
 });

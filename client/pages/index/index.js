@@ -81,7 +81,7 @@ Page({
     onShow:function(){
       this.refreshUserInfo();
 
-      wx.navigateTo({ url: '../person/person?id=1' });
+      // wx.navigateTo({ url: '../person/person?id=1' });
     },
     /*
     * 分享活动首页
@@ -263,7 +263,7 @@ Page({
           qcloud.request({
             // 要请求的地址
             url: this.data.weRunUrl,
-            method:'POST',
+            method:'GET',
             header: {
               'content-type': 'application/x-www-form-urlencoded' // 默认值
             },

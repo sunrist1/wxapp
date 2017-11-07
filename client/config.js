@@ -3,11 +3,11 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-// var host = 'https://669512587.junkwok.club';  // 正式环境地址
+var host = 'https://669512587.junkwok.club';  // 正式环境地址
 // var host = 'https://jkapsbgk.qcloud.la';  //开发环境地址
 var knshost = 'https://pc.efoundation.com.cn/newlife/api/step';  // java
 // var knshost = 'http://192.168.1.211:5757/weapp';    //  node
-var host = 'http://192.168.1.211:5757';
+// var host = 'http://192.168.1.211:5757';
 // var knshost = 'http://192.168.1.211:8080/newlife/api/step';
 // var knshost = 'http://192.168.1.158:8080/newlife/api/step';
 

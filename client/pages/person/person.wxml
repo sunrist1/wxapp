@@ -1,4 +1,5 @@
 <!--pages/person/person.wxml-->
 <view class='root'>
-  
+  <view class='top'>
+  </view>
 </view>

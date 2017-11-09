@@ -52,7 +52,7 @@
         <view class='list-box'>
           <view class='list-item' 
             bindtap='goPerson'
-            data-id="WeChat"
+            data-id="{{item.openId}}"
             wx:for="{{rankArr}}" wx:key="this" wx:for-index="idx" wx:for-item="item">
             <view class='index-num'>{{item.rank}}</view>
             <image class='avatar-img' src='{{item.avatarUrl}}'></image>

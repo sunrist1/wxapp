@@ -471,5 +471,7 @@ Page({
      */
     goPerson(event){
       let id = event.currentTarget.dataset.id
+      console.log(id)
+      wx.navigateTo({ url: `../person/person?id=${id}` });
     }
 });

@@ -1,1 +1,56 @@
 /* pages/person/person.wxss */
+.today_data{
+  background-color: #fff;
+  padding:20rpx 50rpx;
+  display:flex;
+  justify-content:space-between;
+}
+.today_data text{
+  vertical-align: middle;
+  line-height:60rpx;
+}
+.today_data .steps_num{
+  color:#d2453c;
+  font-size: 50rpx;
+}
+.today_data .uploadBtn{
+  border-radius: 8rpx;
+  background-color:#ff6801;
+  color:#fff;
+  padding:5rpx 10rpx;
+}
+
+.steps_list{
+  background-color: #f0eff4;
+  padding:20rpx;
+  min-height: 1100rpx;
+}
+
+.steps_list .list_item{
+  background-color: #fff;
+  height: 80rpx;
+  width:95%;
+  margin:10rpx auto;
+  /* transition: width 0.2s; */
+}
+
+.steps_list .list_item .item_box{
+  padding-right:5%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.steps_list .list_item .item_box .box{
+  display:flex;
+  justify-content:space-between;
+  padding:0 15rpx;
+  background-color: #2f5895;
+  color:#fff;
+}
+
+.steps_list .list_item .item_box .date{
+  font-size: 28rpx;
+}
+.steps_list .list_item .oldItem{
+  background-color: #b8c1e0!important;
+}

@@ -1,5 +1,24 @@
 <!--pages/person/person.wxml-->
 <view class='root'>
-  <view class='top'>
+  <view class='today_data'>
+    <text>{{lastData.statDate}}</text>
+    <block wx:if="{{lastData.step?true:false}}">
+      <text class='steps_num'>{{lastData.step}}</text>
+    </block>
+    <block wx:else>
+      <view class='uploadBtn'>上传今天步数</view>
+    </block>
+    
+  </view>
+
+  <view class='steps_list'>
+    <view class='list_item' wx:for="{{weekData}}" wx:key="this" wx:for-index="idx" wx:for-item="item">
+      <view class='item_box' style="width:{{item.per}};">
+        <view class='box {{idx > 5 ? "oldItem" : "newItem"}}' animation="{{animationData}}">
+          <text class='date'>{{item.statDate}}</text>
+          <text class='step_num'>{{item.step}}</text>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
